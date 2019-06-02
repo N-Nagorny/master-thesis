@@ -1,0 +1,150 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{afterpage}
+\usepackage{subcaption}
+\usepackage{floatrow}
+\usepackage{fontspec} % XeTeX
+\usepackage{xunicode} % Unicode для XeTeX
+\usepackage{xltxtra}  % Верхние и нижние индексы
+\usepackage{pdfpages} % Вставка PDF
+
+% Шрифты, xelatex
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}
+\newfontfamily\cyrillicfonttt{FreeMono}
+\setmonofont{FreeMono} % Моноширинный шрифт для оформления кода
+
+% Русский язык
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+
+\usepackage{amssymb,amsfonts,amsmath} % Математика
+\usepackage{mathtools}
+\numberwithin{equation}{section} % Нумерация формул
+
+% Reference style
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+\usepackage{tabularx}
+\usepackage{enumerate} % Тонкая настройка списков
+\usepackage{indentfirst} % Красная строка после заголовка
+
+\renewcommand{\baselinestretch}{1.5} % Полуторный междустрочный интервал
+\parindent 1.25cm % Абзацный отступ
+
+
+\sloppy             % Избавляемся от переполнений
+\hyphenpenalty=1000 % Частота переносов
+\clubpenalty=10000  % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца
+
+% Отступы у страниц
+\usepackage{geometry}
+\geometry{left=3cm}
+\geometry{right=1.5cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\usepackage{lastpage}
+
+% Move page numbers up
+\usepackage{fancyhdr}
+
+\fancyhf{}
+\chead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+
+% Списки
+\usepackage{enumitem}
+\setlist[enumerate,itemize]{leftmargin=12.7mm} % Отступы в списках
+
+\makeatletter
+    \AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+\setlist{nolistsep} % Нет отступов между пунктами списка
+\renewcommand{\labelitemi}{--} % Маркер списка
+\renewcommand{\labelenumi}{\asbuk{enumi})} % Список второго уровня
+\renewcommand{\labelenumii}{\arabic{enumii})} % Список третьего уровня
+
+\newcommand\centerThe[1]{\noindent\begin{center}#1\end{center}\par}
+
+% Содержание
+\usepackage{textcase}
+\usepackage[subfigure]{tocloft}
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{fancy}}} 
+\renewcommand{\contentsname}{Содержание}
+\renewcommand{\cfttoctitlefont}{\bfseries\centerThe}
+\renewcommand{\cftaftertoctitle}{}
+\renewcommand{\cftsecfont}{\hspace{0pt}}            % Имена секций в содержании не жирным шрифтом
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Точки для секций в содержании
+\renewcommand\cftsecpagefont{\mdseries}             % Номера страниц не жирные
+\setcounter{tocdepth}{2}                            % Глубина оглавления
+
+%Формулы
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Rot}{rot}
+\newcommand{\parder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+\newcommand\yee[3]{\left.#1\right|^{#2}_{#3}}
+\newcommand\Yee[3]{#1\Big|^{#2}_{#3}}
+\newcommand{\hanglimitsoperator}[4][c]{\text{\makebox[\widthof{$#2$}][#1]{ $#2^{#3}_{#4}$ }}}
+
+\newcommand\fyee[3]{\hanglimitsoperator[l]{\left.#1\right|}{#2}{#3}~~~}
+\newcommand\fYee[3]{\hanglimitsoperator[l]{#1\Big|}{#2}{#3}~~~}
+\newcommand\yeediff[5]{\frac{\yee{#1}{#2}{#3} - \yee{#1}{#2}{#4}}{\Delta{#5}}}
+
+% Точка в заголовках рисунков и таблиц
+\addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+\usepackage[labelsep=endash]{caption}
+\numberwithin{figure}{section}
+
+% Roman numerals
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+% Code listings
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Листинг}
+\lstset{
+    basicstyle=\small\ttfamily, % Размер и тип шрифта
+    breaklines=true, % Перенос строк
+    tabsize=2, % Размер табуляции
+    literate={--}{{-{}-}}2 % Корректно отображать двойной дефис
+}
+
+% Bibliography items marking
+\makeatletter 
+\renewcommand\@biblabel[1]{#1.} 
+\makeatother
+
+% Оформление заголовков
+\usepackage[compact,explicit]{titlesec}
+\usepackage{titletoc} %Точки после номеров секций в содержании
+\titleformat{\section}[block]{}{}{12.5mm}{\bfseries\thesection\quad#1}
+\titleformat{\subsection}[block]{}{}{12.5mm}{\bfseries\thesubsection\quad#1}
+\titleformat{\subsubsection}[block]{\vspace{1em}\normalsize}{}{12.5mm}{\thesubsubsection\quad#1\vspace{1em}}
+\titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{0pt}
+\titleformat{\paragraph}{}{}{12.5mm}{#1}
+\titlespacing{\paragraph}{12.5mm}{*4}{*1.5}
+
+% Anonymous section
+\newcommand{\anonsection}[1]{
+    \phantomsection % Корректный переход по ссылкам в содержании
+    \paragraph{\bfseries{#1}}
+    \addcontentsline{toc}{section}{#1}
+}
+
+%Appendix section
+\newcommand{\appendsection}[1]{
+    \phantomsection % Корректный переход по ссылкам в содержании
+    \paragraph{\hfill\bfseries{#1}}
+    \addcontentsline{toc}{section}{#1}
+}
+
+% Unbreakable dashes
+\usepackage[shortcuts]{extdash}
