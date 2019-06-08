@@ -16,7 +16,13 @@
 \input{include/07-experiment}
 \input{include/08-summary}
 
-\input{include/09-bibliography}
-\input{include/10-appendix}
+\anonsection{Список использованной литературы}
+{\def\section*#1{}
+\bibliographystyle{ugost2008}
+\bibliography{include/examples}
+}
+\clearpage
+
+\input{include/09-appendix}
 
 \end{document}

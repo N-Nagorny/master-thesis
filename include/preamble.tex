@@ -8,6 +8,7 @@
 \usepackage{xunicode} % Unicode для XeTeX
 \usepackage{xltxtra}  % Верхние и нижние индексы
 \usepackage{pdfpages} % Вставка PDF
+\usepackage{lscape}       % Альбомная ориентация
 
 % Шрифты, xelatex
 \defaultfontfeatures{Ligatures=TeX}
@@ -84,19 +85,6 @@
 \renewcommand\cftsecpagefont{\mdseries}             % Номера страниц не жирные
 \setcounter{tocdepth}{2}                            % Глубина оглавления
 
-%Формулы
-\DeclareMathOperator{\Div}{div}
-\DeclareMathOperator{\Rot}{rot}
-\newcommand{\parder}[2]{\frac{\partial {#1}}{\partial {#2}}}
-
-\newcommand\yee[3]{\left.#1\right|^{#2}_{#3}}
-\newcommand\Yee[3]{#1\Big|^{#2}_{#3}}
-\newcommand{\hanglimitsoperator}[4][c]{\text{\makebox[\widthof{$#2$}][#1]{ $#2^{#3}_{#4}$ }}}
-
-\newcommand\fyee[3]{\hanglimitsoperator[l]{\left.#1\right|}{#2}{#3}~~~}
-\newcommand\fYee[3]{\hanglimitsoperator[l]{#1\Big|}{#2}{#3}~~~}
-\newcommand\yeediff[5]{\frac{\yee{#1}{#2}{#3} - \yee{#1}{#2}{#4}}{\Delta{#5}}}
-
 % Точка в заголовках рисунков и таблиц
 \addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
 \usepackage[labelsep=endash]{caption}
@@ -127,7 +115,7 @@
 \usepackage{titletoc} %Точки после номеров секций в содержании
 \titleformat{\section}[block]{}{}{12.5mm}{\bfseries\thesection\quad#1}
 \titleformat{\subsection}[block]{}{}{12.5mm}{\bfseries\thesubsection\quad#1}
-\titleformat{\subsubsection}[block]{\vspace{1em}\normalsize}{}{12.5mm}{\thesubsubsection\quad#1\vspace{1em}}
+\titleformat{\subsubsection}[block]{}{}{12.5mm}{\thesubsubsection\quad#1}
 \titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{0pt}
 \titleformat{\paragraph}{}{}{12.5mm}{#1}
 \titlespacing{\paragraph}{12.5mm}{*4}{*1.5}
