@@ -10,10 +10,36 @@
 
 Модели нейронных сетей реализованы на языке программирования Python и протестированы с использованием интерпретатора Python~3.5.2. Для реализации математического аппарата нейронных сетей использована библиотека Keras~2.2.4~\cite{Keras} и TensorFlow~1.13.1~\cite{TensorFlow}. Для продуцирования графиков --- библиотека livelossplot~0.3.4~\cite{livelossplot}.
 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{include/graphics/gncnn_color_architecture}
+\caption{Архитектура GNCNN}
+\label{fig:GNCNNArchitecture}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1\textwidth]{include/graphics/french_color_architecture}
+\caption{Архитектура сети с двумя свёрточными слоями}
+\label{fig:FrenchCNNArchitecture}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1\textwidth]{include/graphics/mixed_color_architecture}
+\caption{Архитектура комбинированной свёрточной сети}
+\label{fig:FrenchCNNArchitecture}
+\end{figure}
+\subsection{Алгоритмы предобработки данных при проведении стегоанализа}
+
 \subsection{Функциональные возможности разработанного программного обеспечения}
 \subsection{Интерфейсная часть разработанного программного обеспечения}
 \subsection{Перечень алгоритмов стеговстраивания по отношению к которым решалась задача}
 \subsection{Описание реализованных алгоритмов стегоанализа}
+\subsubsection{Свёрточная нейронная сеть GNCNN}
+ В рамках эксперимента использовалось значение $ \sigma = 0,1 $.
+ В процессе обучения в качестве функции потерь применялась категориальная кросс-энтропия. Используемый метод обучения – Adam со скоростью обучения 0,001, $ \beta_1 = 0,9 $, $ \beta_2 = 0,999 $. 
 \subsection{Результаты сравнительного исследования альтернативных вариантов алгоритмов стегоанализа}
 
 Целью проведения эксперимента было определение способности вышеописанных нейронных сетей различать пустые и заполненные различными способами стегоконтейнеры. Для заполнения использовалось следующее программное обеспечение:
