@@ -51,17 +51,13 @@
 
 \usepackage{lastpage}
 
-% Move page numbers up
+% Modify headers
 \usepackage{fancyhdr}
-
-\fancyhf{}
-\chead{\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\pagestyle{fancy}
 
 % Списки
 \usepackage{enumitem}
-\setlist[enumerate,itemize]{leftmargin=12.7mm} % Отступы в списках
+\setlist[enumerate,itemize]{leftmargin=0mm,itemindent=1.25cm} % Отступы в списках
 
 \makeatletter
     \AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
@@ -115,7 +111,7 @@
 \usepackage{titletoc} %Точки после номеров секций в содержании
 \titleformat{\section}[block]{}{}{12.5mm}{\bfseries\thesection\quad#1}
 \titleformat{\subsection}[block]{}{}{12.5mm}{\bfseries\thesubsection\quad#1}
-\titleformat{\subsubsection}[block]{}{}{12.5mm}{\thesubsubsection\quad#1}
+\titleformat{\subsubsection}[block]{}{}{12.5mm}{\bfseries\thesubsubsection\quad#1}
 \titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{0pt}
 \titleformat{\paragraph}{}{}{12.5mm}{#1}
 \titlespacing{\paragraph}{12.5mm}{*4}{*1.5}
@@ -123,7 +119,7 @@
 % Anonymous section
 \newcommand{\anonsection}[1]{
     \phantomsection % Корректный переход по ссылкам в содержании
-    \paragraph{\bfseries{#1}}
+    \centerThe{\bfseries{#1}}
     \addcontentsline{toc}{section}{#1}
 }
 
