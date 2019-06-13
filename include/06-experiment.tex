@@ -60,6 +60,7 @@
 
 \begin{table}[h!]
 \centering
+\caption{Сравнение методов встраивания в контейнеры в оттенках серого}
     \begin{tabular}{| l | l | l |}
     \hline
     Стегоалгоритм & MSE & Процент восстановленных данных \\ \hline
@@ -68,7 +69,6 @@
     WOW ($ \alpha = 0,4 $) & 0,0389 & – \\ \hline
 %    \hline
     \end{tabular}
-\caption{Сравнение методов встраивания в контейнеры в оттенках серого}
 \label{table:1}
 \end{table}
 
@@ -128,78 +128,105 @@
 
 \begin{figure}[p]
     \centering
-%    \vspace{30mm}
-    \begin{subfigure}[b]{0.485\textwidth}
+
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/gncnn_hic}
                     \caption{GNCNN (ГСП)}
     \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.485\textwidth}
+
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/mixed_hic}
                     \caption{Комб. НС (ГСП)}
     \end{subfigure}
-\bigskip
-    \begin{subfigure}[b]{0.485\textwidth}
-        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/gncnn_koch}
-                    \caption{GNCNN (Кох и Жао)}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.485\textwidth}
-        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/mixed_koch}
-                    \caption{Комб. НС (Кох и Жао)}
-    \end{subfigure}
-    
-\bigskip
-    \begin{subfigure}[b]{0.485\textwidth}
-        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/french_wow}
-                    \caption{2-хслойная НС (WOW)}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.485\textwidth}
-        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/mixed_wow}
-            \caption{Комб. НС (WOW)}
-    \end{subfigure}
 
-    \caption{Графики процесса обучения в случае контейнеров в оттенках серого}
-    \label{fig:GrayscalePlots}
+   \caption{Графики процесса обучения в случае контейнеров в оттенках серого}
+    \label{fig:GrayscalePlotsHIC}
 \end{figure}
 
 \begin{figure}[p]
     \centering
-%    \vspace{30mm}
-    \begin{subfigure}[b]{0.485\textwidth}
+
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/gncnn_koch}
+                    \caption{GNCNN (Кох и Жао)}
+    \end{subfigure}
+
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/mixed_koch}
+                    \caption{Комб. НС (Кох и Жао)}
+    \end{subfigure}
+
+   \caption{Графики процесса обучения в случае контейнеров в оттенках серого}
+    \label{fig:GrayscalePlotsKoch}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/french_wow}
+                    \caption{2-хслойная НС (WOW)}
+    \end{subfigure}
+    ~
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\textwidth]{include/graphics/experimental_plots/grayscale/mixed_wow}
+            \caption{Комб. НС (WOW)}
+    \end{subfigure}
+
+   \caption{Графики процесса обучения в случае контейнеров в оттенках серого}
+    \label{fig:GrayscalePlotsWOW}
+\end{figure}
+
+
+\begin{figure}[p]
+    \centering
+
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/color/gncnn_hic}
                             \caption{GNCNN (ГСП)}
     \end{subfigure}
     ~
-    \begin{subfigure}[b]{0.485\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/color/mixed_hic}
                             \caption{Комб. НС (ГСП)}
     \end{subfigure}
-\bigskip
-    \begin{subfigure}[b]{0.485\textwidth}
+
+    \caption{Графики процесса обучения в случае цветных контейнеров}
+    \label{fig:ColorPlotsHIC}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/color/french_koch}
                             \caption{2-хслойная НС (Кох и Жао)}
     \end{subfigure}
     ~
-    \begin{subfigure}[b]{0.485\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/color/mixed_koch}
                                     \caption{Комб. НС (Кох и Жао)}
     \end{subfigure}
-    
-\bigskip
-    \begin{subfigure}[b]{0.485\textwidth}
+
+    \caption{Графики процесса обучения в случае цветных контейнеров}
+    \label{fig:ColorPlotsKoch}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/color/french_wow}
                                     \caption{2-хслойная НС (WOW)}
     \end{subfigure}
     ~
-    \begin{subfigure}[b]{0.485\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{include/graphics/experimental_plots/color/mixed_wow}
                                             \caption{Комб. НС (WOW)}
     \end{subfigure}
 
     \caption{Графики процесса обучения в случае цветных контейнеров}
-    \label{fig:ColorPlots}
+    \label{fig:ColorPlotsWOW}
 \end{figure}
 
 Из экспериментальных данных можно сделать предположение о том, что ввиду использования в GNCNN скользящих окон малого размера данная модель нейронной сети лучше подходит для анализа контейнеров, заполненных при помощи блочных алгоритмов, а нейронная сеть с двумя свёрточными слоями ввиду большого размера окна лучше подходит для стегоанализа алгоритмов, рассеивающих стегосигнал по изображению. Комбинированная нейронная сеть сочетает преимущества предыдущих архитектур. Также замечено, что GNCNN хуже детектирует алгоритмы, производящие встраивание только в один канал.

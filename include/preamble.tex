@@ -12,10 +12,12 @@
 
 % Шрифты, xelatex
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Times New Roman}
 \newfontfamily\cyrillicfont{Times New Roman}
 \newfontfamily\cyrillicfonttt{FreeMono}
+\setmainfont{Times New Roman}
 \setmonofont{FreeMono} % Моноширинный шрифт для оформления кода
+
+\newenvironment{arial}{\newfontfamily\cyrillicfont{Arial}\setmainfont{Arial}}{\par}
 
 % Русский язык
 \usepackage{polyglossia}
@@ -51,9 +53,16 @@
 
 \usepackage{lastpage}
 
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
 % Modify headers
 \usepackage{fancyhdr}
 \renewcommand{\headrulewidth}{0pt}
+
+% Cyrillic subfigures numbering
+\renewcommand\thesubfigure{\asbuk{subfigure}}
 
 % Списки
 \usepackage{enumitem}
